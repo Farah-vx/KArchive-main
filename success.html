@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESS GRANTED | K-ARCHIVE</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .success-card {
+            text-align: center;
+            border: 1px solid #333;
+            padding: 60px;
+            background: rgba(10, 10, 10, 0.8);
+            letter-spacing: 2px;
+        }
+        .status-tag {
+            color: #800020; /* Burgundy accent */
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        h1 { font-weight: 300; margin-bottom: 30px; }
+        .btn-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-home:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+   <div class="success-card">
+    <div class="status-tag" id="statusTag">Verified Access</div>
+    <h1 id="greeting">IDENTITY RECOGNIZED</h1>
+    <p id="welcomeMessage">Welcome to the Archive.</p>
+    <a href="/index2.html" class="btn-home">ENTER SYSTEM</a>
+</div>
+
+<script>
+    // get name and type from the URL
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name') || 'Member';
+    const type = params.get('type');
+
+    const greetingH1 = document.getElementById('greeting');
+    const statusTag = document.getElementById('statusTag');
+
+    if (type === 'old') {
+        // old User greeting
+        greetingH1.innerText = `WELCOME BACK, ${name.toUpperCase()}`;
+        statusTag.innerText = "Returning Identity";
+    } else {
+        // new User greeting
+        greetingH1.innerText = `WELCOME, ${name.toUpperCase()}`;
+        statusTag.innerText = "New Identity Created";
+    }
+</script>
+</body>
+</html>

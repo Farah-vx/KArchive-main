@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMBERSHIP | K-ARCHIVE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="auth-page-body">
+
+    <div class="auth-wrapper">
+        <a href="index2.html" class="auth-close">✕</a>
+
+        <div class="auth-visual-side">
+            <div class="visual-overlay"></div>
+            <div class="visual-text">
+                <span>EST. 2026</span>
+                <h2>JOIN THE <br>ARCHIVE</h2>
+            </div>
+        </div>
+
+        <div class="auth-form-side">
+            <div id="signup-box" class="form-container">
+                <p class="form-tag">ENROLLMENT</p>
+                <h2>CREATE IDENTITY</h2>
+                <form action="/auth/signup" method="POST">
+                    <div class="input-row">
+                        <label>FULL NAME</label>
+                        <input type="text" name="fullName" placeholder="e.g. Cha eun woo" required>
+                    </div>
+                    <div class="input-row">
+                        <label>EMAIL ADDRESS</label>
+                        <input type="email" name="email" placeholder="name@gmail.com" required>
+                    </div>
+                    <div class="input-row">
+                        <label>PASSWORD</label>
+                        <input type="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="luxury-submit">ACCESS ARCHIVE</button>
+                </form>
+                <p class="switch-text">ALREADY A MEMBER? <span onclick="toggleAuth()">SIGN IN</span></p>
+            </div>
+
+            <div id="signin-box" class="form-container" style="display: none;">
+                <p class="form-tag">RETURNING MEMBER</p>
+                <h2>MEMBER ACCESS</h2>
+                <form action="/auth/signin" method="POST">
+                    <div class="input-row">
+                        <label>EMAIL ADDRESS</label>
+                        <input type="email" name="email" placeholder="name@gmail.com" required>
+                    </div>
+                    <div class="input-row">
+                        <label>PASSWORD</label>
+                        <input type="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="luxury-submit">ENTER</button>
+                </form>
+                <p class="switch-text">NEW TO THE ARCHIVE? <span onclick="toggleAuth()">CREATE IDENTITY</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAuth() {
+            const signup = document.getElementById('signup-box');
+            const signin = document.getElementById('signin-box');
+            if (signup.style.display === "none") {
+                signup.style.display = "block";
+                signin.style.display = "none";
+            } else {
+                signup.style.display = "none";
+                signin.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
