@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 // 3. MongoDB Connection
 // Replace with your MongoDB Atlas string if you have one
-mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/users");
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/users")
     .then(() => console.log('Connected to MongoDB Archive'))
     .catch(err => console.error('Connection Error:', err));
 
